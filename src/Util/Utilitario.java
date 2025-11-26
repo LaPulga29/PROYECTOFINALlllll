@@ -11,9 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Utilitario {
-
     static public int id=0;
     static public ArrayList<Evento> eventos = new ArrayList<>();
-
-
 }

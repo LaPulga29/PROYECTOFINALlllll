@@ -13,4 +13,7 @@ import java.util.List;
 public class Utilitario {
     static public int id=0;
     static public ArrayList<Evento> eventos = new ArrayList<>();
+    ArrayList<Proveedor> proveedores = new ArrayList<>();
+    ArrayList<Invitado> invitados = new ArrayList<>(); // Inicializa lista de invitados.
+
 }

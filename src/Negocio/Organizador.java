@@ -1,20 +1,18 @@
-package Negocio;
-
-public class Organizador {
+package Negocio; // Define el paquete donde se encuentra la clase Organizador, útil para organizar el proyecto.
+public class Organizador {  // Declara la clase Organizador, que representa a la persona encargada de organizar un evento.
     private String idOrganizador;
     private String nombreOrg;
     private String especialidad;
     private int experienciaAnios;
-    private String contactoOrg;
-
+    private String contactoOrg; // Información de contacto del organizador (teléfono, correo, etc.).
     public Organizador(String idOrganizador, String nombreOrg, String especialidad, int experienciaAnios, String contactoOrg) {
+        // Constructor: inicializa todos los atributos al crear un objeto Organizador.
         this.idOrganizador = idOrganizador;
         this.nombreOrg = nombreOrg;
         this.especialidad = especialidad;
         this.experienciaAnios = experienciaAnios;
         this.contactoOrg = contactoOrg;
     }
-
     public String getContactoOrg() {
         return contactoOrg;
     }
@@ -30,6 +28,7 @@ public class Organizador {
     public int getExperienciaAnios() {
         return experienciaAnios;
     }
+    // Devuelve los años de experiencia del organizador.
     public void setExperienciaAnios(int experienciaAnios) {
         this.experienciaAnios = experienciaAnios;
     }
@@ -42,13 +41,11 @@ public class Organizador {
     public String getNombreOrg() {
         return nombreOrg;
     }
-
     public void setNombreOrg(String nombre) {
-        this.nombreOrg = nombreOrg;
+        this.nombreOrg = nombreOrg; //
     }
-
     @Override
     public String toString() {
-        return "\nID del organizador: "+idOrganizador+"\nNombre: "+nombreOrg+"\nEspecialidad: "+especialidad+"\nAños de experiecia: "+experienciaAnios+"\nContacto:"+contactoOrg;
+        return super.toString();
     }
 }

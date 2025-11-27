@@ -1,14 +1,14 @@
-package Negocio;
-import Util.Utilitario;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-public class MainEventos {
-    static List<Evento> listado = new ArrayList<>();
-    static Scanner sc = new Scanner(System.in);
-    public static void main (String[] args){
-        SistemaEventos sistema = new SistemaEventos();
-        int opc;
+package Negocio;                  // Declara que este archivo pertenece al paquete "Negocio", organizando las clases por módulos.
+import Util.Utilitario;           // Importa la clase Utilitario desde el paquete Util (posible clase de ayuda: validaciones, formatos, etc.).
+import java.util.ArrayList;       // Importa ArrayList, implementación de lista redimensionable.
+import java.util.List;            // Importa la interfaz List, para programar contra la abstracción.
+import java.util.Scanner;         // Importa Scanner, para leer entrada desde consola.
+public class MainEventos {        // Define la clase pública MainEventos, punto de entrada del programa.
+    static List<Evento> listado = new ArrayList<>(); // Crea una lista estática de eventos, accesible desde toda la clase.
+    static Scanner sc = new Scanner(System.in);      // Crea un Scanner estático para leer entradas de usuario en consola.
+    public static void main (String[] args){         // Metodo main: punto de arranque de la aplicación.
+        SistemaEventos sistema = new SistemaEventos();// Instancia el sistema de eventos.
+        int opc;                                      // Declara una variable para opciones de menú (aún no usada).
         do {
             sistema.menu();
             opc = sistema.leerEntero("Seleccione una opción: ");
@@ -37,20 +37,15 @@ public class MainEventos {
                     }
                     break;
                 case 2:
-                    System.out.println("Seleccione el evento en el que desea agregar invitados: ");
-                    sistema.mostrarEventoss();
-                    System.out.println(">> ");
-                    int num = sc.nextInt();
-                    sistema.crearListaInvitados(Utilitario.eventos.get(num));
+                    sistema.gestionDeInvitados();
                     break;
                 case 3:
-                    System.out.println("Seleccione el evento que desea gestionar los proveedores:");
-                    sistema.mostrarEventoss(); // lista resumida
-                    System.out.print(">> ");
-                    int num1 = sc.nextInt();
-                    sistema.crearListaProveedores(Utilitario.eventos.get(num1));
+                    sistema.gestionDeProveedores();
                     break;
                 case 4:
+                    sistema.buscarEventos();
+                    break;
+                case 5:
                     sistema.generarReportes();
                     break;
                 case 0:
